@@ -4,16 +4,46 @@ from sklearn.impute import SimpleImputer
 
 # --------------------------------------------- TRATAMENTO DE DADOS ----------------------------------------------------
 
-db_padrao = pd.read_csv('GeracaoFonte.csv')
-del db_padrao['dthProcessamento']
-del db_padrao['ideGeracaoFonte']
-imputer = SimpleImputer(missing_values=np.NaN, strategy='constant', fill_value=0)
+db_padrao = pd.read_csv('GeracaoFonte.csv')  # Faz a leitura do banco de dados
+del db_padrao['dthProcessamento']  # Deleta a coluna dthProcessamento (é uma coluna vazia)
+del db_padrao['ideGeracaoFonte']  # Deleta a colune de identificadores
+"""
+Aqui é utilizado um SimpleImputer para remover os valores não númericos (NaN)
+"""
+imputer = SimpleImputer(missing_values=np.NaN, strategy='constant', fill_value=0)  # Cria o imputer
 imputer = imputer.fit(db_padrao[::])
-db_padrao = imputer.transform(db_padrao[::])
+db_padrao = imputer.transform(db_padrao[::])  # Retorna a tabela sem valores NaN
 
 
 # ------------------------------------------- CLASSE GERADORA DE DF ----------------------------------------------------
 class GenDataFrame:
+    """
+    # Gerador de dataframe #
+
+    Esta classe permite a criação de dataframes personalizados
+    Os parametros de criação que podem ou não ser passados são:
+    fonte -> o usuário define pelo nome (string) uma fonte energética.
+    mes -> o usuário define com um número (int) o mês desejado.
+    ano -> o usuário define com um número (int) o ano desejado.
+
+    Por padrão os valores dos atributos são iniciados com a string 'todos'
+    assim retornado todos os valores do dataframe base.
+    Alterando os parâmetros de criação, é possível obter por exemplo:
+
+    **Para gerar o dataframe, é usado o método 'gerar()'
+
+    1) Um dataframe contendo informações sobre a fonte eolica:
+    variavel = GenDataFrame(fonte='Eolicas').gerar()
+
+    1) Um dataframe contendo informações sobre a fonte carvão no mês de janeiro, em todos os anos:
+    variavel = GenDataFrame(fonte='Carvao', mes=1).gerar()
+
+    3) Um dataframe contendo informações sobre a fonte eolica em 2012:
+    variavel = GenDataFrame(fonte='Eolicas', ano=2012).gerar()
+
+    4) Um dataframe contendo informações sobre todas as fontes em novembro de 2015:
+    variavel = GenDataFrame(mes=11, ano=2015).gerar()
+    """
 
     def __init__(self, fonte='todos', mes: int = 'todos', ano: int = 'todos'):
         self.__fonte = fonte
