@@ -129,7 +129,3 @@ class GenDataFrame:
                         preencher(parametros, i)
                 df = pd.DataFrame(parametros)
                 return df
-
-
-x = GenDataFrame(fonte=['Carvao', 'Eolicas'], mes=[1, 2, 3, 4, 5], ano=[2010, 2012, 2013]).gerar()
-print(x)
