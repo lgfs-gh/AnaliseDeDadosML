@@ -299,11 +299,11 @@ def plot_media_anos(fonte: list) -> None:
     legendas: list = []
 
     # Dicionário de armazenamento do valor da média por mês
-    meses = {1: [], 2: [], 3: [], 4: [], 5: [], 6: [],
-             7: [], 8: [], 9: [], 10: [], 11: [], 12: []}
+    meses: dict = {1: [], 2: [], 3: [], 4: [], 5: [], 6: [],
+                   7: [], 8: [], 9: [], 10: [], 11: [], 12: []}
 
     # Quantidade de meses
-    qnt_meses = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+    qnt_meses: list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
 
     def preencher_meses():  # ADICIONA OS DESPACHES POR MÊS
         if row[1][2] == 1:
