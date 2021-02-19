@@ -332,146 +332,133 @@ def plot_media_anos(fonte: list) -> None:
             meses[12].append(row[1][1])
 
     # REDUZIR REPETIÇÃO DE CÓDIGO!
-    for row in data.iterrows():
-        if row[1][0] == 'Hidreletricas exclusive Itaipu' and 'Hidreletricas exclusive Itaipu' in fonte:
-            if 'Hidreletricas exclusive Itaipu' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
     if 'Hidreletricas exclusive Itaipu' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Hidreletricas exclusive Itaipu':
+                if 'Hidreletricas exclusive Itaipu' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             hidreletricas['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, hidreletricas['media'], c='darkcyan')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Itaipu' and 'Itaipu' in fonte:
-            if 'Itaipu' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
     if 'Itaipu' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Itaipu':
+                if 'Itaipu' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             itaipu['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, itaipu['media'], c='darkturquoise')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Oleo Diesel/Combustivel' and 'Oleo Diesel/Combustivel' in fonte:
-            if 'Oleo Diesel/Combustivel' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
     if 'Oleo Diesel/Combustivel' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Oleo Diesel/Combustivel':
+                if 'Oleo Diesel/Combustivel' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             oleo_diesel_combustivel['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, oleo_diesel_combustivel['media'], c='darkgoldenrod')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Gas Natural' and 'Gas Natural' in fonte:
-            if 'Gas Natural' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
     if 'Gas Natural' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Gas Natural':
+                if 'Gas Natural' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             gas_natural['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, gas_natural['media'], c='lightgrey')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Carvao' and 'Carvao' in fonte:
-            if 'Carvao' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
     if 'Carvao' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Carvao':
+                if 'Carvao' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             carvao['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, carvao['media'], c='black')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Eolicas' and 'Eolicas' in fonte:
-            if 'Eolicas' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
     if 'Eolicas' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Eolicas' and 'Eolicas':
+                if 'Eolicas' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             eolica['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, eolica['media'], c='powderblue')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Biomassas' and 'Biomassas' in fonte:
-            if 'Biomassas' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
-
     if 'Biomassas' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Biomassas':
+                if 'Biomassas' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             biomassa['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, biomassa['media'], c='red')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Nuclear' and 'Nuclear' in fonte:
-            if 'Nuclear' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
     if 'Nuclear' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Nuclear':
+                if 'Nuclear' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             nuclear['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, nuclear['media'], c='gold')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Residuos Processos Industriais' and 'Residuos Processos Industrais' in fonte:
-            if 'Residuos Processos Industriais' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
-
     if 'Residuos Processos Industriais' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Residuos Processos Industriais':
+                if 'Residuos Processos Industriais' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             residuos['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, residuos['media'], c='lime')
 
-    for row in data.iterrows():
-        if row[1][0] == 'Energia produzida fora do SIN' and 'Energia produzida fora do SIN' in fonte:
-            if 'Energia produzida fora do SIN' in legendas:
-                pass
-            else:
-                legendas.append(row[1][0])
-            preencher_meses()
-
     if 'Energia produzida fora do SIN' in fonte:
+        for row in data.iterrows():
+            if row[1][0] == 'Energia produzida fora do SIN':
+                if 'Energia produzida fora do SIN' in legendas:
+                    pass
+                else:
+                    legendas.append(row[1][0])
+                preencher_meses()
         for i in range(1, 13):
             energia_fora_sin['media'].append(mean(meses[i]))
-        for i in range(1, 13):
             meses[i].clear()
         plt.plot(qnt_meses, energia_fora_sin['media'], c='grey')
 
@@ -481,3 +468,5 @@ def plot_media_anos(fonte: list) -> None:
     plt.legend(legendas)
     plt.tight_layout()
     plt.show()
+
+plot_media_anos(['Hidreletricas exclusive Itaipu', 'Itaipu'])
