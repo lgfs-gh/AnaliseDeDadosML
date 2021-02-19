@@ -469,4 +469,5 @@ def plot_media_anos(fonte: list) -> None:
     plt.tight_layout()
     plt.show()
 
+
 plot_media_anos(['Hidreletricas exclusive Itaipu', 'Itaipu'])
