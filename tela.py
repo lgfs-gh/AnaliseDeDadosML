@@ -1,5 +1,4 @@
 import PySimpleGUI as sg
-# teste
 
 
 class Interface:
