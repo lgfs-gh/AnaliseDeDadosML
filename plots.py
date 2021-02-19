@@ -468,5 +468,3 @@ def plot_media_anos(fonte: list) -> None:
     plt.legend(legendas)
     plt.tight_layout()
     plt.show()
-
-plot_media_anos(['Hidreletricas exclusive Itaipu', 'Itaipu'])
