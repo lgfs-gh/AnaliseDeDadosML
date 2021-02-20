@@ -261,6 +261,7 @@ def plot_mes_especifico(fonte: list, mes: int) -> None:
                     else:
                         legendas.append(row[1][0])
 
+    plt.title(f'{fonte} | mês {mes} (todos os anos)')
     plt.xlabel('Anos')
     plt.ylabel('Despache GWh')
     plt.legend(legendas)
