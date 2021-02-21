@@ -38,79 +38,131 @@ def plot_ano_especifico(fonte: list, ano: int) -> None:
     legendas: list = []
 
     # Despache em um ano específico
+    # ------------------------ Hidreletricas exclusive Itaipu ------------------------ #
+    # Itera nas linhas da database
     for row in data.iterrows():
-        if row[1][0] == 'Hidreletricas exclusive Itaipu' and 'Hidreletricas exclusive Itaipu' in fonte:
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
+        if row[1][0] == 'Hidreletricas exclusive Itaipu' \
+                and 'Hidreletricas exclusive Itaipu' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 hidreletricas['despache'].append(row[1][1])
                 hidreletricas['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(hidreletricas['mes'], hidreletricas['despache'], c='darkcyan')
-                if 'Hidreletricas exclusive Itaipu' in legendas:
-                    pass
-                else:
-                    legendas.append(row[1][0])
+                # Checa se a fonte está nas legendas
+            if 'Hidreletricas exclusive Itaipu' in legendas:
+                pass
+            else:
+                legendas.append(row[1][0])
+        # ------------------------ Itaipu ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
         elif row[1][0] == 'Itaipu' and 'Itaipu' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 itaipu['despache'].append(row[1][1])
                 itaipu['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(itaipu['mes'], itaipu['despache'], c='darkturquoise')
+            # Checa se a fonte está nas legendas
             if 'Itaipu' in legendas:
                 pass
             else:
                 legendas.append(row[1][0])
-        elif row[1][0] == 'Oleo Diesel/Combustivel' and 'Oleo Diesel/Combustivel' in fonte:
+        # ------------------------ Oleo Diesel / Combustivel ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
+        elif row[1][0] == 'Oleo Diesel / Combustivel' and 'Oleo Diesel / Combustivel' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 oleo_diesel_combustivel['despache'].append(row[1][1])
                 oleo_diesel_combustivel['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(oleo_diesel_combustivel['mes'], oleo_diesel_combustivel['despache'], c='darkgoldenrod')
-            if 'Oleo Diesel/Combustivel' in legendas:
+            # Checa se a fonte está nas legendas
+            if 'Oleo Diesel / Combustivel' in legendas:
                 pass
             else:
                 legendas.append(row[1][0])
+        # ------------------------ Gas Natural ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
         elif row[1][0] == 'Gas Natural' and 'Gas Natural' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 gas_natural['despache'].append(row[1][1])
                 gas_natural['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(gas_natural['mes'], gas_natural['despache'], c='lightgrey')
+            # Checa se a fonte está nas legendas
             if 'Gas Natural' in legendas:
                 pass
             else:
                 legendas.append(row[1][0])
+        # ------------------------ Carvao ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
         elif row[1][0] == 'Carvao' and 'Carvao' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 carvao['despache'].append(row[1][1])
                 carvao['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(carvao['mes'], carvao['despache'], c='black')
+            # Checa se a fonte está nas legendas
             if 'Carvao' in legendas:
                 pass
             else:
                 legendas.append(row[1][0])
+        # ------------------------ Eolicas ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
         elif row[1][0] == 'Eolicas' and 'Eolicas' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 eolica['despache'].append(row[1][1])
                 eolica['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(eolica['mes'], eolica['despache'], c='powderblue')
+            # Checa se a fonte está nas legendas
             if 'Eolicas' in legendas:
                 pass
             else:
                 legendas.append(row[1][0])
+        # ------------------------ Biomassas ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
         elif row[1][0] == 'Biomassas' and 'Biomassas' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 biomassa['despache'].append(row[1][1])
                 biomassa['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(biomassa['mes'], biomassa['despache'], c='red')
+            # Checa se a fonte está nas legendas
             if 'Biomassas' in legendas:
                 pass
             else:
                 legendas.append(row[1][0])
+        # ------------------------ Nuclear ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
         elif row[1][0] == 'Nuclear' and 'Nuclear' in fonte:
+            # Se sim, checa (em row[1][3]) se o valor é correspondente ao passado como parâmetro
             if row[1][3] == ano:
+                # Adiciona ao respectivo dicionário os valores de despache e meses
                 nuclear['despache'].append(row[1][1])
                 nuclear['mes'].append(row[1][2])
+                # Adiciona ao plot despache/mes
                 plt.plot(nuclear['mes'], nuclear['despache'], c='gold')
+            # Checa se a fonte está nas legendas
             if 'Nuclear' in legendas:
                 pass
             else:
                 legendas.append(row[1][0])
+        # ------------------------ Nuclear ------------------------ #
+        # Checa (em row[1][0])o nome da fonte e checa se essa fonte foi passada como parâmetro
         elif row[1][0] == 'Residuos Processos Industriais' and 'Residuos Processos Industriais' in fonte:
             if row[1][3] == ano:
                 nuclear['despache'].append(row[1][1])
