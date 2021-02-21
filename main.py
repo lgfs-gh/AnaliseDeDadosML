@@ -10,6 +10,99 @@ def main():
     plot_ano = False
     plot_mes = False
     plot_media = False
+    dados = {'fontes': [], 'meses': [], 'anos': []}
+
+    def preencher_fontes():
+        if i == 1:
+            dados['fontes'].append('Hidreletricas exclusive Itaipu')
+        elif i == 2:
+            dados['fontes'].append('Itaipu')
+        elif i == 3:
+            dados['fontes'].append('Oleo Diesel / Combustivel')
+        elif i == 4:
+            dados['fontes'].append('Gas Natural')
+        elif i == 5:
+            dados['fontes'].append('Carvao')
+        elif i == 6:
+            dados['fontes'].append('Eolicas')
+        elif i == 7:
+            dados['fontes'].append('Biomassas')
+        elif i == 8:
+            dados['fontes'].append('Nuclear')
+        elif i == 9:
+            dados['fontes'].append('Residuos Processos Industriais')
+        elif i == 10:
+            dados['fontes'].append('Energia produzida fora do SIN')
+
+    def preencher_meses():
+        if i == 1:
+            dados['meses'].append(1)
+        elif i == 2:
+            dados['meses'].append(2)
+        elif i == 3:
+            dados['meses'].append(3)
+        elif i == 4:
+            dados['meses'].append(4)
+        elif i == 5:
+            dados['meses'].append(5)
+        elif i == 6:
+            dados['meses'].append(6)
+        elif i == 7:
+            dados['meses'].append(7)
+        elif i == 8:
+            dados['meses'].append(8)
+        elif i == 9:
+            dados['meses'].append(9)
+        elif i == 10:
+            dados['meses'].append(10)
+        elif i == 11:
+            dados['meses'].append(11)
+        elif i == 12:
+            dados['meses'].append(12)
+
+    def preencher_anos():
+        if i == 1:
+            dados['anos'].append(2000)
+        elif i == 2:
+            dados['anos'].append(2001)
+        elif i == 3:
+            dados['anos'].append(2002)
+        elif i == 4:
+            dados['anos'].append(2003)
+        elif i == 5:
+            dados['anos'].append(2004)
+        elif i == 6:
+            dados['anos'].append(2005)
+        elif i == 7:
+            dados['anos'].append(2006)
+        elif i == 8:
+            dados['anos'].append(2007)
+        elif i == 9:
+            dados['anos'].append(2008)
+        elif i == 10:
+            dados['anos'].append(2009)
+        elif i == 11:
+            dados['anos'].append(2010)
+        elif i == 12:
+            dados['anos'].append(2011)
+        elif i == 13:
+            dados['anos'].append(2012)
+        elif i == 14:
+            dados['anos'].append(2013)
+        elif i == 15:
+            dados['anos'].append(2014)
+        elif i == 16:
+            dados['anos'].append(2015)
+        elif i == 17:
+            dados['anos'].append(2016)
+        elif i == 18:
+            dados['anos'].append(2017)
+        elif i == 19:
+            dados['anos'].append(2018)
+        elif i == 20:
+            dados['anos'].append(2019)
+        elif i == 21:
+            dados['anos'].append(2020)
 
     # ------ Definindo o Menu  ------ #
     menu_def = [['&Arquivo', ['&Abrir', '&Salvar', '&Propriedades', 'S&air']],
@@ -192,110 +285,48 @@ def main():
             opcao_visivel = True
 
         # ------ Menu de opções ------ #
-        if event == '_plotar_':
-            fontes = []
-            anos = []
-            meses = []
+        if event == '_gerar_':
             for i in range(1, 11):
                 if values[f'_frame_fontes_{str(i)}']:
-                    if i == 1:
-                        fontes.append('Hidreletricas exclusive Itaipu')
-                    elif i == 2:
-                        fontes.append('Itaipu')
-                    elif i == 3:
-                        fontes.append('Oleo Diesel / Combustivel')
-                    elif i == 4:
-                        fontes.append('Gas Natural')
-                    elif i == 5:
-                        fontes.append('Carvao')
-                    elif i == 6:
-                        fontes.append('Eolicas')
-                    elif i == 7:
-                        fontes.append('Biomassas')
-                    elif i == 8:
-                        fontes.append('Nuclear')
-                    elif i == 9:
-                        fontes.append('Residuos Processos Industriais')
-                    elif i == 10:
-                        fontes.append('Energia produzida fora do SIN')
+                    preencher_fontes()
             for i in range(1, 13):
                 if values[f'_frame_meses_{str(i)}']:
-                    if i == 1:
-                        meses.append(1)
-                    elif i == 2:
-                        meses.append(2)
-                    elif i == 3:
-                        meses.append(3)
-                    elif i == 4:
-                        meses.append(4)
-                    elif i == 5:
-                        meses.append(5)
-                    elif i == 6:
-                        meses.append(6)
-                    elif i == 7:
-                        meses.append(7)
-                    elif i == 8:
-                        meses.append(8)
-                    elif i == 9:
-                        meses.append(9)
-                    elif i == 10:
-                        meses.append(10)
-                    elif i == 11:
-                        meses.append(11)
-                    elif i == 12:
-                        meses.append(12)
+                    preencher_meses()
             for i in range(1, 22):
                 if values[f'_frame_anos_{str(i)}']:
-                    if i == 1:
-                        anos.append(2000)
-                    elif i == 2:
-                        anos.append(2001)
-                    elif i == 3:
-                        anos.append(2002)
-                    elif i == 4:
-                        anos.append(2003)
-                    elif i == 5:
-                        anos.append(2004)
-                    elif i == 6:
-                        anos.append(2005)
-                    elif i == 7:
-                        anos.append(2006)
-                    elif i == 8:
-                        anos.append(2007)
-                    elif i == 9:
-                        anos.append(2008)
-                    elif i == 10:
-                        anos.append(2009)
-                    elif i == 11:
-                        anos.append(2010)
-                    elif i == 12:
-                        anos.append(2011)
-                    elif i == 13:
-                        anos.append(2012)
-                    elif i == 14:
-                        anos.append(2013)
-                    elif i == 15:
-                        anos.append(2014)
-                    elif i == 16:
-                        anos.append(2015)
-                    elif i == 17:
-                        anos.append(2016)
-                    elif i == 18:
-                        anos.append(2017)
-                    elif i == 19:
-                        anos.append(2018)
-                    elif i == 20:
-                        anos.append(2019)
-                    elif i == 21:
-                        anos.append(2020)
+                    preencher_anos()
+            df = GenDataFrame(dados['fontes'], dados['meses'], dados['anos']).gerar()
+            print(df)
+            dados['fontes'].clear()
+            dados['meses'].clear()
+            dados['anos'].clear()
+            window.close()
+            sg.popup('Dataframe gerado com sucesso!', title='DATAFRAME', custom_text='     VOLTAR AO MENU     ')
+            main()
+
+        if event == '_plotar_':
+            for i in range(1, 11):
+                if values[f'_frame_fontes_{str(i)}']:
+                    preencher_fontes()
+            for i in range(1, 13):
+                if values[f'_frame_meses_{str(i)}']:
+                    preencher_meses()
+            for i in range(1, 22):
+                if values[f'_frame_anos_{str(i)}']:
+                    preencher_anos()
             if plot_ano:
-                for ano in anos:
-                    plot_ano_especifico(fontes, ano)
+                for ano in dados['anos']:
+                    plot_ano_especifico(dados['fontes'], ano)
+                    dados['fontes'].clear()
+                    dados['anos'].clear()
             if plot_mes:
-                for mes in meses:
-                    plot_mes_especifico(fontes, mes)
+                for mes in dados['meses']:
+                    plot_mes_especifico(dados['fontes'], mes)
+                    dados['fontes'].clear()
+                    dados['meses'].clear()
             if plot_media:
-                plot_media_anos(fontes)
+                plot_media_anos(dados['fontes'])
+                dados['fontes'].clear()
     window.Close()
 
 
