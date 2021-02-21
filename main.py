@@ -43,7 +43,7 @@ def main():
     layout_coluna_fontes = [
         [sg.Checkbox(' Hidreletricas Exclusive Itaipu', key='_frame_fontes_1')],
         [sg.Checkbox(' Itaipu', key='_frame_fontes_2')],
-        [sg.Checkbox(' Oleo Diesel/Combustivel', key='_frame_fontes_3')],
+        [sg.Checkbox(' Oleo Diesel / Combustivel', key='_frame_fontes_3')],
         [sg.Checkbox(' Gas Natural', key='_frame_fontes_4')],
         [sg.Checkbox(' Carvao', key='_frame_fontes_5')],
         [sg.Checkbox(' Eolicas', key='_frame_fontes_6')],
@@ -203,7 +203,7 @@ def main():
                     elif i == 2:
                         fontes.append('Itaipu')
                     elif i == 3:
-                        fontes.append('Oleo Diesel/Combustivel')
+                        fontes.append('Oleo Diesel / Combustivel')
                     elif i == 4:
                         fontes.append('Gas Natural')
                     elif i == 5:
@@ -217,8 +217,8 @@ def main():
                     elif i == 9:
                         fontes.append('Residuos Processos Industriais')
                     elif i == 10:
-                        fontes.append('Energia Produzida fora do SIN')
-            for i in range(1, 12):
+                        fontes.append('Energia produzida fora do SIN')
+            for i in range(1, 13):
                 if values[f'_frame_meses_{str(i)}']:
                     if i == 1:
                         meses.append(1)
